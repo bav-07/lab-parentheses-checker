@@ -33,6 +33,12 @@ public class ParenthesesChecker {
 
         // Make a char array with all non-parentheses characters removed from string
         char[] chars = string.toCharArray();
+
+        // Looping through this char array, if the character is an opening bracket, add it to the Stack
+        // If you encounter a closing bracket, compare it to the character at the top of the Stack:
+            // If the closing bracket matches with the opening bracket in the stack, we can remove the opening bracket from the stack as it has found a matching pair
+            // If the closing bracket does not match the opening bracket at the top of the stack, then the string is grammatically incorrect, so we return false
+        // We do this for all characters in the char array
         for (char c : chars){
             if (openingParentheses.contains(c)){
                 unmatchedParentheses.push(c);
@@ -49,10 +55,10 @@ public class ParenthesesChecker {
                 }
             }
         }
-        if (unmatchedParentheses.empty()) {
-            return true;
-        }
-        return false;
+
+        // If at the end of the for loop our stack is empty, that means all brackets have been successfully matched, so we have a grammatically correct string
+        return unmatchedParentheses.empty();
+        // If our stack is not empty, we have opening bracket(s) without a matching closing bracket, and hence we return false
     }
 
 }
