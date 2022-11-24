@@ -15,8 +15,6 @@ public class ParenthesesChecker {
         // closing bracket at start, opening one at the end
         // opening bracket followed by 2 closing brackets
 
-    //
-
     public ParenthesesChecker() {
 
     }
