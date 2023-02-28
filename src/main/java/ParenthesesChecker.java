@@ -1,6 +1,4 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class ParenthesesChecker {
 
@@ -25,6 +23,8 @@ public class ParenthesesChecker {
         // Use these to compare to the characters in the string
         List<Character> openingParentheses = Arrays.asList('(','{','[','<');
         List<Character> closingParentheses = Arrays.asList(')','}',']','>');
+
+        Set<Character> characterSet = new HashSet<>();
 
         // Make an empty stack to store opening brackets in one by one
         Stack<Character> unmatchedParentheses = new Stack<>();
